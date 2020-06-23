@@ -47,9 +47,9 @@
     "description": "Efecto lupa-zoom sobre capa",
     "text": "Plugin que permite realizar un efecto de zoom o de lupa sobre una o varias capas",
     "version": "1.0.0",
-    "date": "Diciembre, 2019",
+    "date": "Junio, 2020",
     "author": "",
-    "org": "Consejería de Hacienda, Industria y Energía. Junta de Andalucía",
+    "org": "Consejería de Hacienda, Industria y Energía. Junta de Andalucía.",
     "tags": "mapea,plugin",
     "icon": "./facade/assets/icons/icons.svg",
     "centralized": true
