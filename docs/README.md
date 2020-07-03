@@ -31,10 +31,6 @@ Plugin que permite realizar un efecto de zoom o de lupa sobre una o varias capas
 
 - **zoomMax**. campo numérico que define el nivel maximo de zoom. (Valor por defecto 10)
 
-# Eventos
-
-# Otros métodos
-
 # Ejemplos de uso
 
 ## Ejemplo 1

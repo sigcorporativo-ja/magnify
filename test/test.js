@@ -1,17 +1,30 @@
 import Magnify from 'facade/magnify';
 
-
-/* PRUEBA DE PARÁMETRO zoom y zoomMax */
-
 const map = M.map({
   container: "mapjs",
-  layers: ["WMS*Municipios*http://www.ideandalucia.es/wms/dea100_divisiones_administrativas?*terminos_municipales*false*true"],
+  zoom:1,
+  center: {
+    x: 360020,
+    y: 4149045,
+  },
   controls: ['layerswitcher'],
 });
 
-const mp = new Magnify({ position: 'TL', zoom: 3, zoomMax: 20 });
+const wmts = new M.layer.WMTS({
+  url: "http://www.ideandalucia.es/geowebcache/service/wmts",
+  name: "toporaster",
+  matrixSet: "EPSG:25830",
+  legend: "Toporaster"
+}, {
+  format: 'image/png'
+});
 
-
+map.addLayers([wmts]);
+const mp = new Magnify({
+  zoom: 8,
+  layers: 'toporaster'
+});
+map.addPlugin(mp);
 
 /* CASO 1. Si no se indica capa en la creación, asumir capa base como capa a magnificar.*/
 /*
