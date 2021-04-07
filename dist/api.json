@@ -1,40 +1,29 @@
 {
   "url": {
-    "name": "Magnify",
+    "name": "magnify",
     "separator": "*"
   },
   "constructor": "M.plugin.Magnify",
   "parameters": [{
     "type": "object",
     "properties": [{
-        "type": "enum",
-        "name": "position",
-        "possibleValues": [
-          "TL",
-          "TR",
-          "BL",
-          "BR"
-        ],
-        "position": 0
-      },
-      {
-        "type": "simple",
-        "name": "layers",
-        "position": 1
-      },
-      {
-        "type": "simple",
-        "name": "zoomMax",
-        "value": 10,
-        "position": 2
-      },
-      {
-        "type": "simple",
-        "name": "zoom",
-        "value": 1,
-        "position": 3
-      }
-    ]
+      "type": "simple",
+      "name": "position",
+      "position": 0,
+      "possibleValues": ["TL", "TR", "BL", "BR"]
+    }, {
+      "type": "simple",
+      "name": "layers",
+      "position": 1
+    }, {
+      "type": "simple",
+      "name": "zoomMax",
+      "position": 2
+    }, {
+      "type": "simple",
+      "name": "zoom",
+      "position": 3
+    }]
   }],
   "files": {
     "ol": {
@@ -43,7 +32,7 @@
     }
   },
   "metadata": {
-    "name": "Magnify",
+    "name": "magnify",
     "description": "Efecto lupa-zoom sobre capa",
     "text": "Plugin que permite realizar un efecto de zoom o de lupa sobre una o varias capas",
     "version": "1.0.0",

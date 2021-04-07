@@ -4,7 +4,7 @@
  */
 import 'assets/css/magnify';
 import MagnifyControl from './magnifycontrol';
-import api from '../../api.json';
+import api from '../../api';
 
 export default class Magnify extends M.Plugin {
   /**
@@ -51,11 +51,9 @@ export default class Magnify extends M.Plugin {
 
     /**
      * Position of the Plugin
-     * Posible values: TR | TL | BL | BR
-     * @type {Enum}
+     * @type {string}
      */
-    const positions = ['TR', 'TL', 'BL', 'BR'];
-    this.position = positions.includes(options.position) ? options.position : 'TR';
+    this.position = options.position || 'TR';
 
 
     /**
@@ -75,12 +73,10 @@ export default class Magnify extends M.Plugin {
 
     /**
      * Max limit zoom
-     * Value: number 
+     * Value: number
      * @type {number}
      */
-    if (typeof options.zoomMax === 'number') {
-      this.zoomMax = options.zoomMax;
-    } else this.zoomMax = 10;
+    this.zoomMax = options.zoomMax || 10;
 
 
     /**
@@ -88,16 +84,7 @@ export default class Magnify extends M.Plugin {
      * Value: number in range 1 - zoomMax
      * @type {number}
      */
-    if (typeof options.zoom === 'number') {
-      this.zoom = options.zoom;
-      if (options.zoom < 1) {
-        this.zoom = 1;
-      } else if (options.zoom > options.zoomMax) {
-        this.zoom = options.zoomMax;
-      }
-    } else {
-      this.zoom = 1; // Default value
-    }
+    this.zoom = options.zoom || 1;
 
 
     /**
