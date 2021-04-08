@@ -90,7 +90,9 @@ export default class ZoomInteraction extends ol.Overlay {
       /* eslint-disable */
       this.setPosition(px);
       this.mgview_.setCenter(px);
-      if (this._elt.querySelector('canvas').style.display === 'none') this.mgmap_.updateSize();
+      // if (this._elt.querySelector('div').querySelector('div').style.display === 'none') {
+      this.mgmap_.updateSize();
+      // }
       /* eslint-enable */
     }
   }
